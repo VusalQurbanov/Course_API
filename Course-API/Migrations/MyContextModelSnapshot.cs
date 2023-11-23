@@ -34,7 +34,7 @@ namespace Course_API.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("CourseRoom", (string)null);
+                    b.ToTable("CourseRoom");
                 });
 
             modelBuilder.Entity("Course_API.Entities.Course", b =>
@@ -51,7 +51,7 @@ namespace Course_API.Migrations
 
                     b.HasKey("CourseId");
 
-                    b.ToTable("Course", (string)null);
+                    b.ToTable("Course");
 
                     b.HasData(
                         new
@@ -98,7 +98,7 @@ namespace Course_API.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("Group", (string)null);
+                    b.ToTable("Group");
                 });
 
             modelBuilder.Entity("Course_API.Entities.Lesson", b =>
@@ -120,7 +120,7 @@ namespace Course_API.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Lesson", (string)null);
+                    b.ToTable("Lesson");
                 });
 
             modelBuilder.Entity("Course_API.Entities.LessonDays", b =>
@@ -137,7 +137,7 @@ namespace Course_API.Migrations
 
                     b.HasKey("LessonDaysId");
 
-                    b.ToTable("LessonDays", (string)null);
+                    b.ToTable("LessonDays");
 
                     b.HasData(
                         new
@@ -186,7 +186,7 @@ namespace Course_API.Migrations
 
                     b.HasKey("LessonHoursId");
 
-                    b.ToTable("LessonHours", (string)null);
+                    b.ToTable("LessonHours");
 
                     b.HasData(
                         new
@@ -230,7 +230,7 @@ namespace Course_API.Migrations
 
                     b.HasKey("RoomId");
 
-                    b.ToTable("Room", (string)null);
+                    b.ToTable("Room");
                 });
 
             modelBuilder.Entity("Course_API.Entities.Student", b =>
@@ -261,7 +261,7 @@ namespace Course_API.Migrations
 
                     b.HasIndex("GroupId");
 
-                    b.ToTable("Student", (string)null);
+                    b.ToTable("Student");
                 });
 
             modelBuilder.Entity("Course_API.Entities.Teacher", b =>
@@ -292,7 +292,7 @@ namespace Course_API.Migrations
 
                     b.HasIndex("LessonId");
 
-                    b.ToTable("Teacher", (string)null);
+                    b.ToTable("Teacher");
                 });
 
             modelBuilder.Entity("GroupLessonDays", b =>
@@ -307,7 +307,7 @@ namespace Course_API.Migrations
 
                     b.HasIndex("LessonDaysId");
 
-                    b.ToTable("GroupLessonDays", (string)null);
+                    b.ToTable("GroupLessonDays");
                 });
 
             modelBuilder.Entity("GroupLessonHours", b =>
@@ -322,7 +322,7 @@ namespace Course_API.Migrations
 
                     b.HasIndex("LessonHoursId");
 
-                    b.ToTable("GroupLessonHours", (string)null);
+                    b.ToTable("GroupLessonHours");
                 });
 
             modelBuilder.Entity("CourseRoom", b =>

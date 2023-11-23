@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Course_API.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20231024075249_teacher")]
-    partial class teacher
+    [Migration("20231123113313_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,10 +87,10 @@ namespace Course_API.Migrations
                     b.Property<int?>("LessonId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("RoomId")
+                    b.Property<int?>("RoomId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("integer");
 
                     b.HasKey("GroupId");
@@ -247,7 +247,7 @@ namespace Course_API.Migrations
                     b.Property<int>("CourseId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("GroupId")
+                    b.Property<int?>("GroupId")
                         .HasColumnType("integer");
 
                     b.Property<string>("StudentName")
@@ -357,9 +357,7 @@ namespace Course_API.Migrations
 
                     b.HasOne("Course_API.Entities.Teacher", null)
                         .WithMany("Group")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
                 });
 
             modelBuilder.Entity("Course_API.Entities.Lesson", b =>
@@ -381,9 +379,7 @@ namespace Course_API.Migrations
 
                     b.HasOne("Course_API.Entities.Group", null)
                         .WithMany("Student")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId");
                 });
 
             modelBuilder.Entity("Course_API.Entities.Teacher", b =>
